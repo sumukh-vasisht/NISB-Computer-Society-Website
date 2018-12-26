@@ -1,0 +1,26 @@
+#primaryNav{
+    padding: 20px 150px;
+    position: sticky;
+    top:0;
+    
+}
+#carouselContainer{
+    padding: 0px;
+}
+#carousel-nav{
+    background-color:#00D1B2;
+    height: 60px;
+    width: 60px;
+    font-size: 150%;
+}
+#title{
+    font-size: 300%;
+    color: white;
+    font-weight: bold;
+    background: rgba(0,0,0,0.8);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'raleway';
+
+}

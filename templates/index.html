@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Profile Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/style.css')}}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/carousel.css')}}" />
+    <script src="{{ url_for('static',filename='js/main.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/carousel.js')}}"></script>
+    
+</head>
+<body>
+    {% include 'header.html'%}
+    <section class="hero is-large has-carousel">
+            <div class="hero-carousel carousel-animated carousel-animate-slide" data-autoplay="true">
+              <div class='carousel-container'>
+                {% for slide in slides %}
+                    <div class='carousel-item has-background'>
+                        <img class="is-background" src="../static/images/slides/{{slide}}" alt=""/>
+                    </div>
+                {% endfor %}
+              </div>
+              <div class="carousel-navigation is-overlay">
+                <div class="carousel-nav-left" id="carousel-nav">
+                  <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </div>
+                <div class="carousel-nav-right" id="carousel-nav">
+                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>            
+            <div class="hero-body has-text-centered">
+              <div class="columns is-mobile is-centered">
+                <div class="column is-half is-narrow">
+                  <div class="field has-addons">
+                    <div class="control is-expanded">
+                      <h1 id="title">NIE IEEE STUDENT BRANCH</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </section>
+
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    
+  </head>
+  <body>
+  
+  </body>
+</html>
