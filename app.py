@@ -194,6 +194,11 @@ def events():
 def chapters():
     return render_template("chapters.html")
 
+@app.route("/Contact")
+def chapters():
+    return render_template("contact.html")
+
+
 
 
 
