@@ -195,7 +195,7 @@ def chapters():
     return render_template("chapters.html")
 
 @app.route("/Contact")
-def chapters():
+def contact():
     return render_template("contact.html")
 
 
