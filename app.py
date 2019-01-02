@@ -190,5 +190,12 @@ def events():
     upcomingEventsList.reverse()
     return render_template("events.html" , pastEventsList=pastEventsList, upcomingEventsList=upcomingEventsList)
 
+@app.route("/Chapters")
+def chapters():
+    return render_template("chapters.html")
+
+
+
+
 if __name__=="__main__":
     app.run(debug=True)
