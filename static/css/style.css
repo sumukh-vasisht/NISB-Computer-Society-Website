@@ -1,3 +1,32 @@
+/* SCROLLBAR STYLES */
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #B10C2D;
+}
+body{
+    background: #F5F5F5;
+}
+h1{
+    font-size: 250%;
+}
+p{
+    font-size: 130%;
+}
 #primaryNav{
     padding: 20px 150px;
     position: sticky;
@@ -8,12 +37,13 @@
     padding: 0px;
 }
 #carousel-nav{
-    background-color:#00D1B2;
+    background-color:#B10C2D;
     height: 60px;
     width: 60px;
+    color: white;
     font-size: 150%;
 }
-#title{
+#titleFadeInUp{
     font-size: 300%;
     color: white;
     font-weight: bold;
@@ -23,4 +53,145 @@
     text-align: center;
     font-family: 'raleway';
 
+}
+
+#activitiesSection{
+    background-color: #062041;
+}
+#activityContainer{
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#activityContainer #right{
+    flex-direction: row-reverse
+}
+#activityDescriptionContainer{
+    padding: 250px 100px;
+    
+    background: #062041;
+    box-sizing: border-box;
+    position: relative;
+    
+    
+}
+#activityDescriptionContainer h1 {
+    font-size: 300%;
+    color: #B10C2D;
+    
+    margin-bottom: 20px;
+    
+}
+#activityDescriptionContainer p {
+    font-size: 120%;
+    
+    color: #faf6f6;
+    
+}
+
+#img{
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    
+}
+.no-padding{
+    padding: 0px !important;
+}
+.no-margin{
+    margin: 0px !important;
+}
+.fullwidth-image{
+    width: 100%;
+}
+
+#footer{
+    background: black;
+    padding: 50px;
+    color: white;
+    z-index: 10000;
+    position: relative;
+}
+
+
+
+
+/* ABOUT PAGE */
+.membersSection{
+    padding-bottom: 150px;
+    background: #062041;
+    text-align: center;
+}
+.member{
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    border: rgb(119, 7, 37) solid 1px;
+    
+}
+.memberImg img{
+    width: 100%;
+}
+.memberDescription{
+    margin-top: -10px;
+    width: 100%;
+    padding: 15px 0px;
+    text-align: center;
+    background: #062041;
+    color: white;
+    
+}
+.memberDescription h1{
+    font-size: 140%;
+}
+.memberDescription p {
+    font-size: 120%;
+    color: #B10C2D;
+}
+.about{
+    padding-bottom: 150px;
+}
+.aboutRow{
+    text-align: center;
+    padding: 100px 100px 0px 100px;
+    
+}
+.aboutRow img{
+    height: 200px;
+    margin: 50px;
+}
+.aboutRow h1{
+    font-size: 250%;
+    color: #B10C2D;
+    margin: 10px;
+}
+.aboutRow p {
+    text-align: left;
+    margin:10px;
+}
+
+
+
+
+/* EVENTS */
+.eventsSection{
+    
+    background: #062041;
+    text-align: center;
+}
+
+.eventsContainer{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-size: 110%;
+}
+.eventContent{
+    padding: 10px 50px;
+}
+
+
+/* ADMIN PANEL */
+.padding{
+    padding: 100px;
 }

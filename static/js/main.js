@@ -2,6 +2,10 @@ console.log('JS added');
 document.addEventListener('DOMContentLoaded', () => {
 
 
+
+
+  //Opening Title Animation
+
     //Carousel Activate
     var carousels = bulmaCarousel.attach();
 

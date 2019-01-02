@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NISB | Events</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/animations.css')}}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/style.css')}}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/carousel.css')}}" />
+    <script src="{{ url_for('static',filename='js/main.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/carousel.js')}}"></script>
+    
+</head>
+<body>
+    {% include 'header.html'%}
+    <section class="hero eventsSection is-medium has-carousel">
+            <div class="hero-carousel carousel-animated carousel-animate-slide">
+              <div class='carousel-container'>
+                <div class='carousel-item has-background'>
+                    
+                </div>
+              </div>
+            </div>            
+            <div class="hero-body has-text-centered">
+              <div class="columns is-mobile is-centered">
+                <div class="column is-half is-narrow">
+                  <div class="field has-addons">
+                    <div class="control is-expanded">
+                      <h1 id="titleFadeInUp">UPCOMING EVENTS</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </section>
+    <div class="container eventsContainer">
+        <div class="columns is-multiline">
+            {% if upcomingEventsList %}
+            
+            {% else %}
+            <h2>Brainstorming now, we will update soon.</h2>
+            {% endif %}
+
+            
+            {% for upcomingEvent in upcomingEventsList %}
+            
+            <div class="column is-one-third eventCard">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image">
+                            <img src="{{ upcomingEvent.imgURL }}" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <h1>{{ upcomingEvent.title }}</h1>
+                            
+                            <strong>Organized by : </strong>{{ upcomingEvent.organisedBy }}<br>
+                            <strong>Venue : </strong>{{ upcomingEvent.venue }}<br>
+                            <strong>Date : </strong>{{ upcomingEvent.date }}<br>
+                            <strong>Time : </strong>{{ upcomingEvent.time }}<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <section class="hero eventsSection is-medium has-carousel">
+            <div class="hero-carousel carousel-animated carousel-animate-slide">
+              <div class='carousel-container'>
+                <div class='carousel-item has-background'>
+                    
+                </div>
+              </div>
+            </div>            
+            <div class="hero-body has-text-centered">
+              <div class="columns is-mobile is-centered">
+                <div class="column is-half is-narrow">
+                  <div class="field has-addons">
+                    <div class="control is-expanded">
+                      <h1 id="titleFadeInUp">PAST EVENTS</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </section>
+    <div class="container eventsContainer">
+        <div class="columns is-multiline">
+            {% for pastEvent in pastEventsList %}
+            <div class="column is-one-third eventCard">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image">
+                            <img src="{{ pastEvent.imgURL }}" alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="content eventContent">
+                            <h1>{{ pastEvent.title }}</h1>
+                            
+                            <strong>Organized by : </strong>{{ pastEvent.organisedBy }}<br>
+                            <strong>Venue : </strong>{{ pastEvent.venue }}<br>
+                            <strong>Date : </strong>{{ pastEvent.date }}<br>
+                            <strong>Time : </strong>{{ pastEvent.time }}<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+
+    {% include 'footer.html'%}
+    
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

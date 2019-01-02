@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NISB | About </title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/animations.css')}}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/style.css')}}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/carousel.css')}}" />
+    <script src="{{ url_for('static',filename='js/main.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/carousel.js')}}"></script>
+    
+</head>
+<body>
+    {% include 'header.html'%}
+    <section class="hero is-large has-carousel">
+            <div class="hero-carousel carousel-animated carousel-animate-slide">
+              <div class='carousel-container'>
+                <div class='carousel-item has-background'>
+                    <img class="is-background" src="../static/images/about/team.jpg" alt=""/>
+                </div>
+              </div>
+            </div>            
+            <div class="hero-body has-text-centered">
+              <div class="columns is-mobile is-centered">
+                <div class="column is-half is-narrow">
+                  <div class="field has-addons">
+                    <div class="control is-expanded">
+                      <h1 id="titleFadeInUp">OUR TEAM</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </section>
+    <div class="membersSection is-fluid">
+        
+        <div class="columns is-multiline" id="membersColumns">
+            {% for member in members %}
+            <div class="column is-one-fifth member no-padding">
+                <div class="memberImg">
+                    <img src="{{ member.imgURL }}">
+                </div>
+                <div class="memberDescription">
+                    <h1>{{ member.name }}</h1>
+                    <p>{{ member.position }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="about container">
+        {% for row in aboutRow %}
+            <div class="aboutRow">
+                <img src="{{row.imgURL}}">
+                <h1>{{ row.heading }}</h1>
+                <p>{{ row.text }}</p>
+            </div>
+        {% endfor %}
+    </div>
+        
+    {% include 'footer.html'%}
+    
+    {{ stuff }}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

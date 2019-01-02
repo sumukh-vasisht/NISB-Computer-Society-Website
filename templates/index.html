@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Profile Page</title>
+    <title>NISB | Home</title>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/animations.css')}}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/style.css')}}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/carousel.css')}}" />
     <script src="{{ url_for('static',filename='js/main.js')}}"></script>
@@ -39,7 +40,7 @@
                 <div class="column is-half is-narrow">
                   <div class="field has-addons">
                     <div class="control is-expanded">
-                      <h1 id="title">NIE IEEE STUDENT BRANCH</h1>
+                      <h1 id="titleFadeInUp">NIE IEEE STUDENT BRANCH</h1>
                     </div>
                   </div>
                 </div>
@@ -47,19 +48,59 @@
             </div>
     </section>
 
+    <!-- What and Why NISB -->
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                WHAT IS NISB?
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            NISB is the IEEE student branch of National Institute of Engineering. It is one of the largest and most active student branches of Karnataka. Having been active for a decade, we have been honoured and humbled with numerous awards and accolades over time, including "The Best Student Chapter" of Region 10­ Bangalore. We organize and host a wide range of technical workshops and events. We have our odd sem fest ADROIT and even sem fest ANKURA. Electronika , IPL are few our signature events.
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            NISB conducts various kinds of workshops, seminars, webinars, technical talks, competitions, hackathons, and events througout the semester to help its members for the all round development with the advancing technology.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities -->
+
+    <section id="activitiesSection">
+        {% for activity in activities %}      
+            <section class="hero" id="activityContainer">
+                
+                <div class="columns" id="{{activity.direction}}">
+                    <div class="column is-one-third no-padding">
+                        <div id="activityDescriptionContainer">
+                            <div id="activityDescription">
+                                <h1>{{ activity.heading }}</h1>
+                                <p>{{  activity.text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column no-padding">
+                        <img id="img" src="{{activity.imgUrl}}">
+                    </div>
+                </div>
+                
+            </section>
+        {% endfor %}
+    </section>
+    {% include 'footer.html'%}
+    
+
 
 </body>
-</html>
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    
-  </head>
-  <body>
-  
-  </body>
 </html>

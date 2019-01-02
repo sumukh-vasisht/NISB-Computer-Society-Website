@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NISB | Admin</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/animations.css')}}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/style.css')}}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/carousel.css')}}" />
+    <script src="{{ url_for('static',filename='js/main.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/carousel.js')}}"></script>
+    
+</head>
+<body>
+    {% include 'header.html'%}
+    <section class="hero eventHero is-medium has-carousel">
+            <div class="hero-carousel carousel-animated carousel-animate-slide">
+              <div class='carousel-container'>
+                <div class='carousel-item has-background'>
+                    
+                </div>
+              </div>
+            </div>            
+            <div class="hero-body has-text-centered">
+              <div class="columns is-mobile is-centered">
+                <div class="column is-half is-narrow">
+                  <div class="field has-addons">
+                    <div class="control is-expanded">
+                      <h1 id="titleFadeInUp">EDIT EVENTS</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </section>
+    <div class="container padding">
+        <form method="POST" enctype="multipart/form-data">
+        <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+                <input class="input" name="title" type="text"  placeholder="Enter Title">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Organized By</label>
+            <div class="control">
+                <input class="input" name="organisedBy" type="text"  placeholder="Eg: NISB, WIE, Computer Society">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Date</label>
+            <div class="control">
+                <input class="input" name="date" type="text"  placeholder="DD-MM-YY">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Time</label>
+            <div class="control">
+                <input class="input" name="time" type="text"  placeholder="Eg: 2:30 PM">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Venue</label>
+            <div class="control">
+                <input class="input" name="venue" type="text"  placeholder="Enter Venue">
+            </div>
+        </div>
+        <div class="file has-name">
+            <label class="file-label">
+                <input class="file-input" type="file" name="coverImage">
+                <span class="file-cta">
+                <span class="file-icon">
+                    <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                    Choose a file…
+                </span>
+                </span>
+                <span class="file-name">
+                {{ filename }}
+                </span>
+            </label>
+        </div>
+        <div class="field is-grouped">
+            <div class="control">
+              <button type="submit" class="button is-link">Submit</button>
+            </div>
+            <div class="control">
+              <button class="button is-text">Cancel</button>
+            </div>
+        </div>
+        </form>
+
+        {{ uploadedMessage }}
+    </div>
+    <div class="container padding">
+        <h1>UPCOMING EVENTS</h1>
+        <br>
+        <br>
+        {% for upcomingEvent in upcomingEventsList %}
+        <div class="card">
+            <div class="card-content">
+                <div class="content">
+                    <h2>{{ upcomingEvent.title }}</h2>
+                    <br>
+                    <time>{{ upcomingEvent.date }}</time>
+                    <br>
+                    <a href="Admin/{{upcomingEvent.id}}/Delete"><span>Delete</span></a>
+                    <br>
+                    <a href="Admin/{{upcomingEvent.id}}/changeType"><span>Set Event to Past</span></a>
+                </div>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+    
+    
+    <div class="container padding">
+        <h1>PAST EVENTS</h1>
+        <br>
+        <br>
+        {% for pastEvent in pastEventsList %}
+        <div class="card">
+            <div class="card-content">
+                <div class="content">
+                    <h2>{{ pastEvent.title }}</h2>
+                    <br>
+                    <time>{{ pastEvent.date }}</time>
+                    <br>
+                    <a href="Admin/{{pastEvent.id}}/Delete"><span>Delete</span></a>
+                    <br>
+                    <a href="Admin/{{pastEvent.id}}/changeType"><span>Set Event to Upcoming</span></a>
+                </div>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+
+    {% include 'footer.html'%}
+    
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
