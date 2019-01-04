@@ -16,6 +16,7 @@
     
 </head>
 <body>
+    {% include 'back_to_top.html'%}
     {% include 'header.html'%}
     <section class="hero is-large has-carousel">
             <div class="hero-carousel carousel-animated carousel-animate-slide" data-autoplay="true">
@@ -28,19 +29,19 @@
               </div>
               <div class="carousel-navigation is-overlay">
                 <div class="carousel-nav-left" id="carousel-nav">
-                  <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    <i class="fas fa-caret-left"></i>
                 </div>
                 <div class="carousel-nav-right" id="carousel-nav">
-                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    <i class="fas fa-caret-right"></i>
                 </div>
               </div>
             </div>            
-            <div class="hero-body has-text-centered">
-              <div class="columns is-mobile is-centered">
+            <div class="hero-body slider-hero-body has-text-centered">
+              <div class="columns slider-hero-body-columns is-mobile is-centered">
                 <div class="column is-half is-narrow">
                   <div class="field has-addons">
                     <div class="control is-expanded">
-                      <h1 id="titleFadeInUp">NIE IEEE STUDENT BRANCH</h1>
+                      <h1 id="titleFadeInUp" class="slider-title">NIE IEEE STUDENT BRANCH</h1>
                     </div>
                   </div>
                 </div>

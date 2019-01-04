@@ -32,5 +32,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
-  
-  });
+    
+
+      
+});
+
+backToTop = function(){
+  var scrollStep = -window.scrollY / (400 / 15),
+  scrollInterval = setInterval(function(){
+    if ( window.scrollY != 0 ) {
+      window.scrollBy( 0, scrollStep );
+    }
+    else 
+      clearInterval(scrollInterval); 
+  },15);
+};
+window.addEventListener("scroll", function (event) {    
+  if(this.scrollY > window.innerHeight-300){    
+    document.getElementById("toTopWrapper").style.opacity = 1;
+  }
+  else{
+    document.getElementById("toTopWrapper").style.opacity = 0;
+  }
+});
