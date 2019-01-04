@@ -158,7 +158,6 @@ body{
 }
 .aboutRow img{
     height: 200px;
-    margin: 50px;
 }
 .aboutRow h1{
     font-size: 250%;
@@ -215,3 +214,147 @@ body{
 h2{
     font-size: 120%;
 }
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES 
+* Extra small devices (phones, 600px and down) 
+@media only screen and (max-width: 600px) {...} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) 
+@media only screen and (min-width: 600px) {...} 
+
+/* Medium devices (landscape tablets, 768px and up) 
+@media only screen and (min-width: 768px) {...} 
+
+/* Large devices (laptops/desktops, 992px and up)
+@media only screen and (min-width: 992px) {...} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up)
+@media only screen and (min-width: 1200px) {...}
+>
+>
+>
+>
+>
+>
+>
+*/
+@media only screen and (max-width: 1086px) {
+    
+
+} 
+@media only screen and (max-width: 992px) {
+    #activityDescriptionContainer{
+        padding: 80px 50px;
+        font-size: 90%;
+    }
+    .eventsContainer{
+        padding-left: 50px;
+        padding-right: 50px;
+        
+    }
+    .padding{
+        padding: 80px;
+    }
+
+} 
+
+@media only screen and (max-width: 768px) {
+    #titleFadeInUp{
+        font-size: 200%;
+    }
+    #activityDescriptionContainer{
+        padding: 80px;
+        font-size: 90%;
+    }
+    .eventsContainer{
+        padding-left: 100px;
+        padding-right: 100px;
+        
+    }
+    .padding{
+        padding: 80px;
+    }
+
+} 
+
+@media only screen and (max-width: 600px) {
+    #titleFadeInUp{
+        font-size: 100%;
+        padding: 20px;
+    }
+    #activityDescriptionContainer{
+        padding: 50px;
+        font-size: 90%;
+    }
+    #membersColumns{
+        padding-top: 100px;
+    }
+    .member {
+        margin: 10px;
+    }
+    .aboutRow{
+        padding: 50px 50px 0px 50px;
+    }
+    
+    .eventsContainer{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+        
+    }
+    .padding{
+        padding: 60px;
+    }
+
+} 
+
+@media only screen and (max-width: 1434px) {
+    
+    #activityDescriptionContainer{
+        padding: 100px;
+        font-size: 90%;
+    }
+}
+
+
+/* MOBILE NAVBAR */
+@media only screen and (max-width: 1087px) {
+    
+    #primaryNav{
+        padding: 0;
+    }
+    .navbar-brand{
+        padding: 20px;
+    }
+    #navbarBasicExample{
+        padding: 20px;
+        height: 100vh;
+        width: 60vw;
+        float: right;
+        position: absolute;
+        right: 0px;
+        z-index: 1000;
+    }
+}
+
+@media only screen and (max-width: 1276px) {
+    
+    #activityDescriptionContainer{
+        padding: 70px;
+        font-size: 90%;
+    }
+}  
+
+
+
+
+
