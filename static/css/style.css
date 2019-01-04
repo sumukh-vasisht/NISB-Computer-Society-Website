@@ -50,6 +50,14 @@ body{
     top:0;
     
 }
+
+.navbar-item{
+    transition: all 0.3s linear;
+    border-bottom: 2px black solid;
+}
+.navbar-item:hover{
+    border-bottom: 2px white solid;
+}
 #carouselContainer{
     padding: 0px;
 }
