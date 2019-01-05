@@ -22,6 +22,9 @@
     font-family: Title;
     src: url(../Raleway-Thin.ttf);
 }
+#whiteText{
+    color: #F5F5F5;
+}
 #toTopWrapper{
     cursor: pointer;
     transition: all 0.3s ease;

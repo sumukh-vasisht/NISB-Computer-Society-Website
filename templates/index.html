@@ -1,107 +1,72 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>NISB | Home</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/animations.css')}}" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/style.css')}}" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/carousel.css')}}" />
-    <script src="{{ url_for('static',filename='js/main.js')}}"></script>
-    <script src="{{ url_for('static',filename='js/carousel.js')}}"></script>
-    
-</head>
-<body>
-    {% include 'back_to_top.html'%}
-    {% include 'header.html'%}
-    <section class="hero is-large has-carousel">
-            <div class="hero-carousel carousel-animated carousel-animate-slide" data-autoplay="true">
-              <div class='carousel-container'>
-                {% for slide in slides %}
-                    <div class='carousel-item has-background'>
-                        <img class="is-background" src="../static/images/slides/{{slide}}" alt=""/>
-                    </div>
-                {% endfor %}
-              </div>
-              <div class="carousel-navigation is-overlay">
-                <div class="carousel-nav-left" id="carousel-nav">
-                    <i class="fas fa-caret-left"></i>
-                </div>
-                <div class="carousel-nav-right" id="carousel-nav">
-                    <i class="fas fa-caret-right"></i>
-                </div>
-              </div>
-            </div>            
-            <div class="hero-body slider-hero-body has-text-centered">
-              <div class="columns slider-hero-body-columns is-mobile is-centered">
-                <div class="column is-half is-narrow">
-                  <div class="field has-addons">
-                    <div class="control is-expanded">
-                      <h1 id="titleFadeInUp" class="slider-title">NIE IEEE STUDENT BRANCH</h1>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-    </section>
+	<head>
+		<title>NISB | Home</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<noscript><link rel="stylesheet" href="{{url_for('static', filename='css/noscript.css')}}" /></noscript>
+		<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/main.css')}}" />
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    	<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/animations.css')}}" />
+    	<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/style.css')}}" />
+    	<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/carousel.css')}}" />
+    	
+	</head>
+	<body class="is-preload home_page_menu">
 
-    <!-- What and Why NISB -->
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column">
-                    <div class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                WHAT IS NISB?
-                            </p>
-                        </header>
-                        <div class="card-content">
-                            NISB is the IEEE student branch of National Institute of Engineering. It is one of the largest and most active student branches of Karnataka. Having been active for a decade, we have been honoured and humbled with numerous awards and accolades over time, including "The Best Student Chapter" of Region 10­ Bangalore. We organize and host a wide range of technical workshops and events. We have our odd sem fest ADROIT and even sem fest ANKURA. Electronika , IPL are few our signature events.
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            NISB conducts various kinds of workshops, seminars, webinars, technical talks, competitions, hackathons, and events througout the semester to help its members for the all round development with the advancing technology.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-    <!-- Activities -->
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<img class="image" src="../static/images/logo.png">
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1 id="whiteText">NIE IEEE Student Branch</h1>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a  id="whiteText" href="/About">About</a></li>
+								<li><a  id="whiteText" href="/Team">Team</a></li>
+								<li><a  id="whiteText" href="/Events">Events</a></li>
+								<li><a  id="whiteText" href="http://blog.nisb.in/">Blog</a></li>
+								<li><a  id="whiteText" href="/Chapters">Chapters</a></li>
+								<li><a  id="whiteText" href="#contact">Contact</a></li>
+							</ul>
+						</nav>
+					</header>
 
-    <section id="activitiesSection">
-        {% for activity in activities %}      
-            <section class="hero" id="activityContainer">
-                
-                <div class="columns" id="{{activity.direction}}">
-                    <div class="column is-one-third no-padding">
-                        <div id="activityDescriptionContainer">
-                            <div id="activityDescription">
-                                <h1>{{ activity.heading }}</h1>
-                                <p>{{  activity.text }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column no-padding">
-                        <img id="img" src="{{activity.imgUrl}}">
-                    </div>
-                </div>
-                
-            </section>
-        {% endfor %}
-    </section>
-    {% include 'footer.html'%}
-    
+				<!-- Main -->
+					<div id="main">
 
+						
 
-</body>
+					</div>
+
+				<!-- Footer -->
+					<footer>
+					<!--	<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>-->
+					</footer>
+
+			</div>
+		<!-- BG -->
+		<div id="bg"></div>
+
+		<!-- Scripts -->
+		<script src="{{ url_for('static',filename='js/main.js')}}"></script>
+    	<script src="{{ url_for('static',filename='js/carousel.js')}}"></script>
+
+			<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+	</body>
 </html>

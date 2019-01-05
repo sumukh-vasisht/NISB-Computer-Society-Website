@@ -29,40 +29,8 @@ def index():
         "slide1.jpg",
         "slide2.jpg"
     ]
-    #ACTIVITIES DATA
-    activities = [
-        {
-            "heading":"FOCUS GROUPS",
-            "imgUrl":"../static/images/activities/focusGroups.jpg",
-            "text":"The people with common technical interest form groups to focus and learn on particular technology and develop real life application projects. We have been conducting various focus groups on Microcontrollers like AVR Atmega, Deep Learning, Web development & Python programming.",
-            "direction":"left"
-        },
-        {
-            "heading":"WIE WEEKLY MEETINGS",
-            "imgUrl":"../static/images/activities/wieWeek.jpg",
-            "text":"Women in Engineering affinity group under NISB conducts weekly meetups where women are mostly focused to learn a new technical concepts and to implement simple projects.",
-            "direction":"right"
-        },
-        {
-            "heading":"TECHNICAL BLOG",
-            "imgUrl":"../static/images/activities/blog.png",
-            "text":"NISB has its one technical blog site which provides platform for students to showcase their writing skills and to learn from it. We also have a youtube channel to which helps students to keep learning new things.",
-            "direction":"left"
-        },
-        {
-            "heading":"INDUSTRIAL VISITS",
-            "imgUrl":"../static/images/activities/cisco.jpg",
-            "text":"As a part of technical tour to make students get an exposure about working of things in Industries every semester we conduct Industrial visits. Our recent visits include ISRO space centre, IISC Banglore, NOKIA, Cisco, Infosys.",
-            "direction":"right"
-        },
-        {
-            "heading":"SOCIAL INITIATIVES",
-            "imgUrl":"../static/images/activities/wieSI.jpg",
-            "text":"Every year we visit Old age ashram's, Divya Deepa with a theme and to make children and aged people familiar with basic use of technology and its benefits for individuals.",
-            "direction":"left"
-        }
-    ]
-    return render_template("index.html", slides=slides , activities = activities)
+    
+    return render_template("index.html")
 
 
 #ADMIN PANEL (PASSWORD PROTECT LATER)
@@ -142,7 +110,39 @@ def about():
     for member in members:
         url = member["imgURL"]
         member["imgURL"] = storage.child(url).get_url(token="none")
-
+    #ACTIVITIES DATA
+    activities = [
+        {
+            "heading":"FOCUS GROUPS",
+            "imgUrl":"../static/images/activities/focusGroups.jpg",
+            "text":"The people with common technical interest form groups to focus and learn on particular technology and develop real life application projects. We have been conducting various focus groups on Microcontrollers like AVR Atmega, Deep Learning, Web development & Python programming.",
+            "direction":"left"
+        },
+        {
+            "heading":"WIE WEEKLY MEETINGS",
+            "imgUrl":"../static/images/activities/wieWeek.jpg",
+            "text":"Women in Engineering affinity group under NISB conducts weekly meetups where women are mostly focused to learn a new technical concepts and to implement simple projects.",
+            "direction":"right"
+        },
+        {
+            "heading":"TECHNICAL BLOG",
+            "imgUrl":"../static/images/activities/blog.png",
+            "text":"NISB has its one technical blog site which provides platform for students to showcase their writing skills and to learn from it. We also have a youtube channel to which helps students to keep learning new things.",
+            "direction":"left"
+        },
+        {
+            "heading":"INDUSTRIAL VISITS",
+            "imgUrl":"../static/images/activities/cisco.jpg",
+            "text":"As a part of technical tour to make students get an exposure about working of things in Industries every semester we conduct Industrial visits. Our recent visits include ISRO space centre, IISC Banglore, NOKIA, Cisco, Infosys.",
+            "direction":"right"
+        },
+        {
+            "heading":"SOCIAL INITIATIVES",
+            "imgUrl":"../static/images/activities/wieSI.jpg",
+            "text":"Every year we visit Old age ashram's, Divya Deepa with a theme and to make children and aged people familiar with basic use of technology and its benefits for individuals.",
+            "direction":"left"
+        }
+    ]
     aboutRow = [
         {
             "imgURL":"../static/images/about/logo.png",
@@ -165,7 +165,16 @@ def about():
             "text":"IEEE Banglaore section is one of the most prestigious sections in India known for conducting a wide range of events and workshops. IEEE Bangalore Section is recognised as an Outstanding Section for Membership Recruitment and Retention Performance – 2016. It has 14 Society Chapters and two affinity groups.The Chapters carry out focused activities in the respective area by way of conducting technical talks under DLT, Seminars, Tutorials, workshops etc. Apart from the Chapters two affinity groups viz. the Graduate of the Last Decade (GOLD) and Women In Engineering (WIE) also carry out related activities. IEEE Bangalore and IEEE Princeton and Central New Jersey Sections had signed a MoU as sister sections.There are about 53 Student Branches in Karnataka in the various graduate and post­graduate engineering colleges and these units conduct technical talks, TechFests etc. A dedicated Student Paper contest, Technical Colloquium and Student Leadership Workshop are some of the major events conducted under Student activities of the Section."
         }
     ]
-    return render_template("about.html", members=members, aboutRow=aboutRow)
+    return render_template("about.html", members=members, aboutRow=aboutRow, activities=activities)
+
+@app.route("/Team")
+def team():
+
+    members = db.child("members").get().val()
+    for member in members:
+        url = member["imgURL"]
+        member["imgURL"] = storage.child(url).get_url(token="none")
+    return render_template("team.html", members=members)
 
 @app.route("/Events")
 def events():

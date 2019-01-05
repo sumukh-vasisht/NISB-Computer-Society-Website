@@ -31,30 +31,62 @@
                 <div class="column is-half is-narrow">
                   <div class="field has-addons">
                     <div class="control is-expanded">
-                      <h1 id="titleFadeInUp">OUR TEAM</h1>
+                      <h1 id="titleFadeInUp">ABOUT</h1>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
     </section>
-    <div class="membersSection is-fluid">
-        
-        <div class="columns is-multiline" id="membersColumns">
-            {% for member in members %}
-            <div class="column is-one-fifth member no-padding">
-                <div class="memberImg">
-                    <img src="{{ member.imgURL }}">
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                WHAT IS NISB?
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            NISB is the IEEE student branch of National Institute of Engineering. It is one of the largest and most active student branches of Karnataka. Having been active for a decade, we have been honoured and humbled with numerous awards and accolades over time, including "The Best Student Chapter" of Region 10­ Bangalore. We organize and host a wide range of technical workshops and events. We have our odd sem fest ADROIT and even sem fest ANKURA. Electronika , IPL are few our signature events.
+                        </div>
+                    </div>
                 </div>
-                <div class="memberDescription">
-                    <h1>{{ member.name }}</h1>
-                    <p>{{ member.position }}</p>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-content">
+                            NISB conducts various kinds of workshops, seminars, webinars, technical talks, competitions, hackathons, and events througout the semester to help its members for the all round development with the advancing technology.
+                        </div>
+                    </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
-    </div>
+    </section>
 
+    <!-- Activities -->
+
+    <section id="activitiesSection">
+        {% for activity in activities %}      
+            <section class="hero" id="activityContainer">
+                
+                <div class="columns" id="{{activity.direction}}">
+                    <div class="column is-one-third no-padding">
+                        <div id="activityDescriptionContainer">
+                            <div id="activityDescription">
+                                <h1>{{ activity.heading }}</h1>
+                                <p>{{  activity.text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column no-padding">
+                        <img id="img" src="{{activity.imgUrl}}">
+                    </div>
+                </div>
+                
+            </section>
+        {% endfor %}
+    </section>
     <div class="about container">
         {% for row in aboutRow %}
             <div class="aboutRow">
