@@ -1,6 +1,19 @@
 from flask import Flask, request, render_template
+from flask_mail import Mail,Message
+
+mail = Mail()
+
 app = Flask(__name__)
 
+app.secret_key = "IamLegendary"
+app.config.update(
+    MAIL_SERVER='smtp.gmail.com',
+    MAIL_PORT=465,
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME = 'nieieeecscontact@gmail.com',
+    MAIL_PASSWORD = "nieieeecs"
+)
+mail = Mail(app)
 
 @app.route("/")
 def index():    
@@ -22,9 +35,24 @@ def events():
 def rubix():
     return render_template("rubix.html")
 
-@app.route("/Contact")
+@app.route("/Contact", methods = ['GET' , 'POST'])
 def contact():
-    return render_template("contact.html")
+    if request.method == 'POST':
+        try:
+            contactName=request.form['contactName']
+            contactEmail=request.form['contactEmail']
+            contactSubject=request.form['contactSubject']
+            contactMessage=request.form['contactMessage']
+            body="Name: "+contactName+"\nEmail: "+contactEmail+"\nSubject: "+contactSubject+"\nMessage: "+contactMessage
+            msg = Message(subject="Contact Form Entry",body=body, sender=(contactName,"nieieeecscontact@gmail.com"), recipients=["varunbheemaiah9@gmail.com"])
+            mail.send(msg)
+            body1="Dear "+contactName+",\n\nThank you you for reaching out to us, we have received the following data:\n\n"+"Name: "+contactName+"\nEmail: "+contactEmail+"\nSubject: "+contactSubject+"\nMessage: "+contactMessage+"\n\nWe will get back to you soon.\n\nRegards,\nNISB Computer Society"
+            msg1 = Message(subject="Contact techNIEks",body=body1, sender=("NISB Computer Society","nieieeecscontact@gmail.com"), recipients=[contactEmail])
+            mail.send(msg1)
+            return render_template("contact.html", message = "Message Sent, we will get back to you shortly")
+        except:
+            return render_template("contact.html", message = "Sending Failed. Please try again")
+    return render_template("contact.html" , message = "")
 
 if __name__=="__main__":
     app.run(debug=True)
