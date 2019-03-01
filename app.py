@@ -1,9 +1,14 @@
 from flask import Flask, request, render_template
 from flask_mail import Mail,Message
+import json
 
 mail = Mail()
 
 app = Flask(__name__)
+
+f = open('static/json/passwords.json')
+pswrd = json.load(f)['gmail']
+f.close()
 
 app.secret_key = "IamLegendary"
 app.config.update(
@@ -11,7 +16,7 @@ app.config.update(
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
     MAIL_USERNAME = 'nieieeecscontact@gmail.com',
-    MAIL_PASSWORD = "nieieeecs"
+    MAIL_PASSWORD = pswrd
 )
 mail = Mail(app)
 
