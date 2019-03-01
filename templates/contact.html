@@ -4,17 +4,17 @@
     
     <title>NIE IEEE CS | Contact </title>
     {% include 'head.html' %}
-		
+	<script src="/static/js/validate.js"></script>
 </head>
 <body>
     {% include 'menu.html'%}
     {% include 'back_to_top.html'%}
-
-    <form action="/Contact" method="POST">
-        Name : <input type = "text" name = "contactName"><br>
-        Email : <input type="text" name = "contactEmail"><br>
-        Subject : <input type="text" name = "contactSubject"><br>
-        Message :<input type="text" name = "contactMessage"><br><br>
+    <p id="validMessage">
+    <form name="Contact" action="/Contact" method="POST" onclick="validate()">
+        Name : <input type = "text" name = "contactName" required><br>
+        Email : <input type="text" name = "contactEmail" required><br>
+        Subject : <input type="text" name = "contactSubject" required><br>
+        Message :<input type="text" name = "contactMessage" required><br><br>
         <input type="submit" value="Submit">
     </form>
     {{ message }}
