@@ -1,18 +1,17 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>NISB | Home</title>
+		<title>NIE IEEE CS</title>
 		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<noscript><link rel="stylesheet" href="{{url_for('static', filename='css/noscript.css')}}" /></noscript>
-		<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/main.css')}}" />
-		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-    	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    	<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/animations.css')}}" />
-    	<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/style.css')}}" />
-    	<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/carousel.css')}}" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<noscript><link rel="stylesheet" href="{{url_for('static', filename='css/noscript.css')}}" /></noscript>
+<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/main.css')}}" />
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/animations.css')}}" />
+<link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename='css/style.css')}}" />
     	
 	</head>
 	<body class="is-preload home_page_menu">
@@ -32,12 +31,11 @@
 						</div>
 						<nav>
 							<ul>
+								<li><a  id="whiteText" href="/Home">Home</a></li>
 								<li><a  id="whiteText" href="/About">About</a></li>
-								<li><a  id="whiteText" href="/Team">Team</a></li>
 								<li><a  id="whiteText" href="/Events">Events</a></li>
-								<li><a  id="whiteText" href="http://blog.nisb.in/">Blog</a></li>
-								<li><a  id="whiteText" href="/Chapters">Chapters</a></li>
-								<li><a  id="whiteText" href="#contact">Contact</a></li>
+								<li><a  id="whiteText" href="/Rubix">Rubix</a></li>
+								<li><a  id="whiteText" href="/Contact">Contact</a></li>
 							</ul>
 						</nav>
 					</header>
@@ -57,16 +55,12 @@
 			</div>
 		<!-- BG -->
 		<div id="bg"></div>
-
+		{% include 'footer.html'%}
+		{% include 'back_to_top.html'%}
 		<!-- Scripts -->
-		<script src="{{ url_for('static',filename='js/main.js')}}"></script>
-    	<script src="{{ url_for('static',filename='js/carousel.js')}}"></script>
-
-			<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
-			<script src="{{url_for('static', filename='js/browser.min.js')}}"></script>
-			<script src="{{url_for('static', filename='js/breakpoints.min.js')}}"></script>
-			<script src="{{url_for('static', filename='js/util.js')}}"></script>
-			<script src="{{url_for('static', filename='js/main.js')}}"></script>
+	
+		{% include 'scripts.html' %}
+	
 
 	</body>
 </html>

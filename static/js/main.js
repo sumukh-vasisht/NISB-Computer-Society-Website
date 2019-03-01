@@ -4,7 +4,6 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-console.log('JS added');
 document.addEventListener('DOMContentLoaded', () => {
 
 
@@ -12,8 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 /* MY JAVASCRIPT Starts */
   //Opening Title Animation
 
-    //Carousel Activate
-    var carousels = bulmaCarousel.attach();
 
 
     // Get all "navbar-burger" elements
@@ -43,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
       
 });
 
+
+/*BACK TO TOP BUTTON */
 backToTop = function(){
   var scrollStep = -window.scrollY / (400 / 15),
   scrollInterval = setInterval(function(){
@@ -469,3 +468,8 @@ window.addEventListener("scroll", function (event) {
 					});
 
 })(jQuery);
+
+
+
+
+

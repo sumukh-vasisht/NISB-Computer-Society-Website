@@ -1279,6 +1279,9 @@ input, select, textarea {
 			border: solid 1px #ffffff;
 			border-radius: 100%;
 		}
+		#header .use-middle {
+			margin-top: 2rem;
+		}
 
 			#header .logo .icon:before {
 				font-size: 2rem;
