@@ -21,16 +21,13 @@ app.config.update(
 mail = Mail(app)
 
 @app.route("/")
-def index():    
-    return render_template("index.html")
-    
 @app.route("/Home")
 def home():    
-    return render_template("home.html")
+    return render_template("index.html")
     
 @app.route("/About")
 def about():
-    return render_template("about.html")
+    return render_template("home.html")
 
 @app.route("/Events")
 def events():
