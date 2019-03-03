@@ -36,6 +36,10 @@ def about():
 def events():
     return render_template("events.html")
 
+@app.route("/Gallery")
+def gallery():
+    return render_template("gallery.html")
+
 @app.route("/Rubix")
 def rubix():
     return render_template("rubix.html")
