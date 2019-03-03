@@ -2239,7 +2239,7 @@ input, select, textarea {
 /* One */
 
 	#one {
-		background: url("static/images/overlay.png"), url("../../static/images/one.jpg");
+		background: #1F2833/*url("static/images/overlay.png"), url("../../static/images/one.jpg")*/;
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
@@ -2248,7 +2248,7 @@ input, select, textarea {
 /* Two */
 
 	#two {
-		background: url("static/images/overlay.png"), url("../../static/images/two.jpg");
+		background: #0B0C10/*url("static/images/overlay.png"), url("../../static/images/two.jpg")*/;
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
