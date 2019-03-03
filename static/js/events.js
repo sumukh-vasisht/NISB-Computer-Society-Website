@@ -15,7 +15,7 @@ db.ref("events").orderByChild("timeStamp").on("value", function(snapshot) {
     var pastEvents = "";
     var upEvents = "";
     Object.keys(this.data).forEach(function(k){
-        if (this.data[k]["name"] !== "dummy" && this.data[k]["organiser"] === "Computer Society") {
+        if (this.data[k]["name"] !== "dummy" && this.data[k]["organiser"] == "Computer Society") {
             var date = this.data[k]["date"].split("-");
             var eventDate = new Date(date[2], date[1]-1, date[0]);
 
