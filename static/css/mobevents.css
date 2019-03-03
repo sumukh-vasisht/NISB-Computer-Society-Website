@@ -1,7 +1,12 @@
+body {
+    color: black;
+}
+
 #eventsMain {
     width: 80%;
     margin: 0 auto;
     margin-top: 0.5rem;
+    color: black;
 }
 
 .eventCard {
@@ -13,6 +18,7 @@
     flex-flow: column wrap;
     justify-content: space-around;
     margin-bottom: 1.2rem;
+    color: black;
 }
 
 
@@ -31,6 +37,7 @@
     justify-content: space-around;
     align-items: flex-start;
     margin-bottom: 1.25rem;
+    color: black;
 }
 
 .eventBox {
@@ -39,6 +46,7 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    color: black;
 }
 
 .eventDesp {
@@ -71,7 +79,7 @@
     display: block;
     height: 100%;
     text-align: center;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     line-height: 2.5rem;
 }
 
