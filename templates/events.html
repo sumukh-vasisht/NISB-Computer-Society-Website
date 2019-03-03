@@ -4,13 +4,64 @@
     
     <title>NIE IEEE CS | Events </title>
     {% include 'head.html' %}
-		
+	<link rel="stylesheet" href="static/css/mobEvents.css" media="(max-width:1249px)">
+    <link rel="stylesheet" href="static/css/mainEvents.css"  media="(min-width:1250px)">
 </head>
 <body>
     {% include 'menu.html'%}
     {% include 'back_to_top.html'%}
 
     <!--PUT STUFF HERE-->
+    <div id="eventsMain">
+
+        <div class="eventBoxWrap">
+            <p style="font-size: 1.25rem; color: black; font-family: 'Bree Serif', serif;">Today's Events</p>
+            <p style="text-align: center; color: black; width: 100%;   font-family: 'Fira Sans Condensed', sans-serif;" id="todayLoad">Loading...</p>
+            <div class="eventBox" id="todayEvents">
+            </div>
+        </div>
+
+
+
+
+        <div class="eventBoxWrap">
+            <p style="font-size: 1.25rem; color: black; font-family: 'Bree Serif', serif;">Upcoming Events</p>
+            <p style="text-align: center; color: black; width: 100%;  font-family: 'Fira Sans Condensed', sans-serif;" id="upLoad">Loading...</p>
+            <div class="eventBox" id="upcoming">
+
+            </div>
+        </div>
+
+
+
+        <div class="eventBoxWrap">
+            <p style="font-size: 1.25rem; color: black; font-family: 'Bree Serif', serif;">Past Events</p>
+            <p style="text-align: center; color: black; width: 100%;  font-family: 'Fira Sans Condensed', sans-serif;" id="pastLoad">Loading...</p>
+            <div id="past" class="eventBox">
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="clr"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script src="/static/js/fb.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyAZzwteKZ6U8IORYAw5SCfplY4m5lJyR9A",
+            authDomain: "nisbevents.firebaseapp.com",
+            databaseURL: "https://nisbevents.firebaseio.com",
+            projectId: "nisbevents",
+            storageBucket: "nisbevents.appspot.com",
+            messagingSenderId: "51508980464"
+        };
+        firebase.initializeApp(config);
+        db = firebase.database();
+    </script>
+
+    <script src="/static/js/events.js"></script>
 
     {% include 'footer.html'%}
     {% include 'scripts.html' %}
