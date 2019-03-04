@@ -8,19 +8,21 @@
     <link rel="stylesheet" type="text/css" href="/static/css/contact.css">
 </head>
 <body>
-    <div class = "container">
     {% include 'menu.html'%}
     {% include 'back_to_top.html'%}
-    <p id="validMessage">
-    <form name="Contact" action="/Contact" method="POST">
-        <strong><font color="black">Name : </font></strong><input type = "text" name = "contactName" required><br>
-        <strong><font color="black">Email : </font></strong><input type="text" name = "contactEmail" required><br>
-        <strong><font color="black">Subject : </font></strong><input type="text" name = "contactSubject" required><br>
-        <strong><font color="black">Message :</font></strong><input type="text" name = "contactMessage" required><br><br>
-        <input type="submit" value="Submit" onclick="validate()">
-    </form>
-    {{ message }}
-
+    <div id="page_container">
+    <div  class = "container">
+        <p id="validMessage"></p>
+        <form name="Contact" action="/Contact" method="POST">
+            <strong><font color="black">Name : </font></strong><input type = "text" name = "contactName" required><br>
+            <strong><font color="black">Email : </font></strong><input type="text" name = "contactEmail" required><br>
+            <strong><font color="black">Subject : </font></strong><input type="text" name = "contactSubject" required><br>
+            <strong><font color="black">Message :</font></strong><input type="text" name = "contactMessage" required><br><br>
+            <input type="submit" value="Submit" onclick="validate()">
+        </form>
+        {{ message }}
+    </div>
+    </div>
     {% include 'footer.html'%}
     {% include 'scripts.html' %}
 </p>

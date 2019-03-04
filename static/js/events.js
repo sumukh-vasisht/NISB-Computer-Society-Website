@@ -18,47 +18,33 @@ db.ref("events").orderByChild("timeStamp").on("value", function(snapshot) {
         if (this.data[k]["name"] !== "dummy" && this.data[k]["organiser"] == "Computer Society") {
             var date = this.data[k]["date"].split("-");
             var eventDate = new Date(date[2], date[1]-1, date[0]);
-
+            var event = `
+            <div class="grid column is-one-third no-padding">
+                <figure class="effect-layla">
+                    <img src=`+ this.data[k]["imgUrl"] +` alt="img03">
+                    <figcaption>
+                        <div class="details">
+                            <p>
+                                <h1>`  + this.data[k]["name"]  + `</h1>
+                                <br>
+                                <h3>
+                                <span>Venue:</span>` +this.data[k]["venue"]  +  `
+                                <br>
+                                <span>Date:</span>` + this.data[k]["date"] + `
+                                <br>
+                                <span>Time:</span>` + this.data[k]["time"] +  `
+                                </h3>
+                            </p>
+                        </div>
+                    </figcaption>			
+                </figure>
+            </div>
+            `;
             if ((todayDate - eventDate) === 0) {
-                var event = `
-                <div class="eventCard">
-                    <div class="eventImg" style="background-image: url(` +  this.data[k]["imgUrl"]+ `)"></div>
-                    <div class="eventDesp" style="color = black;">
-                        <p class="eventTitle">`  + this.data[k]["name"]  + ` </p>
-                        <p class="eventOrganiserWrap">Organised by: <b class="eventOrganiser">` + this.data[k]["organiser"] + `</b></p>
-                        <p class="eventVenue">Venue: <b>` +this.data[k]["venue"]  +  `</b></p>
-                        <p class="eventTime">Date: <b>` + this.data[k]["date"] + `</b> &nbsp&nbsp Time: <b> ` + this.data[k]["time"] +  `</b></p>
-                    </div>
-                    <button class="regBtn"><a target="_blank" href="` + this.data[k]["regUrl"] + `">` + this.data[k]["btnValue"] + `</a></button>
-                </div>
-                    `;
                 todayEvents = event + todayEvents;
             } else if ((todayDate - eventDate) < 0) {
-                var event = `
-                <div class="eventCard">
-                    <div class="eventImg" style="background-image: url(` +  this.data[k]["imgUrl"]+ `)"></div>
-                    <div class="eventDesp" style="color = black;">
-                        <p class="eventTitle">`  + this.data[k]["name"] + ` </p>
-                        <p class="eventOrganiserWrap">Organised by: <b class="eventOrganiser">` + this.data[k]["organiser"] + `</b></p>
-                        <p class="eventVenue">Venue: <b>` +this.data[k]["venue"]  +  `</b></p>
-                        <p class="eventTime">Date: <b>` + this.data[k]["date"] + `</b> &nbsp&nbsp Time: <b> ` + this.data[k]["time"] +  `</b></p>
-                    </div>
-                    <button class="regBtn"><a target="_blank" href="` + this.data[k]["regUrl"] + `">` + this.data[k]["btnValue"] + `</a></button>
-                </div>
-                    `;
                 upEvents += event;
             } else if ((todayDate - eventDate) > 0) {
-                            var event = `
-                <div class="eventCard" style="height: 21rem;">
-                    <div class="eventImg" style="background-image: url(` +  this.data[k]["imgUrl"]+ `)"></div>
-                    <div class="eventDesp" style="color = black;">
-                        <p class="eventTitle">`  + this.data[k]["name"] + ` </p>
-                        <p class="eventOrganiserWrap">Organised by: <b class="eventOrganiser">` + this.data[k]["organiser"] + `</b></p>
-                        <p class="eventVenue">Venue: <b>` +this.data[k]["venue"]  +  `</b></p>
-                        <p class="eventTime">Date: <b>` + this.data[k]["date"] + `</b> &nbsp&nbsp Time: <b> ` + this.data[k]["time"] +  `</b></p>
-                    </div>
-                </div>
-                    `;
                 pastEvents = event + pastEvents;
             }
         }
@@ -75,7 +61,7 @@ db.ref("events").orderByChild("timeStamp").on("value", function(snapshot) {
     }
     if (upEvents === "") {
         document.querySelector("#upLoad").style.display = "block";
-        document.querySelector("#upLoad").innerHTML = "Brainstorming now, we will update soon.";
+        document.querySelector("#upLoad").innerHTML = "Brainstorming now. We will update soon.";
     } else {
         document.querySelector("#upLoad").style.display = "none";
     }
