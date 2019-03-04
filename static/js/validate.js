@@ -1,6 +1,6 @@
 function validate()
 {
-    var nameFormat = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,<>\/?]/;
+    var nameFormat = /[!@#$%^&*()_+\-=\[\]{};':"\\|,<>\/?]/;
     var mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     var Name = document.forms["Contact"]["contactName"].value;
     var Email = document.forms["Contact"]["contactEmail"].value;
