@@ -31,13 +31,14 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 1.25rem;
     position: relative;
+    text-align: center;
 }
 
 .eventBox {
-    display: flex;
+    display: inline-block;
     width: 100%;
     flex-flow: row wrap;
     justify-content: flex-start;

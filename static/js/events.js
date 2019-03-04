@@ -23,7 +23,7 @@ db.ref("events").orderByChild("timeStamp").on("value", function(snapshot) {
                 var event = `
                 <div class="eventCard">
                     <div class="eventImg" style="background-image: url(` +  this.data[k]["imgUrl"]+ `)"></div>
-                    <div class="eventDesp">
+                    <div class="eventDesp" style="color = black;">
                         <p class="eventTitle">`  + this.data[k]["name"]  + ` </p>
                         <p class="eventOrganiserWrap">Organised by: <b class="eventOrganiser">` + this.data[k]["organiser"] + `</b></p>
                         <p class="eventVenue">Venue: <b>` +this.data[k]["venue"]  +  `</b></p>
@@ -37,7 +37,7 @@ db.ref("events").orderByChild("timeStamp").on("value", function(snapshot) {
                 var event = `
                 <div class="eventCard">
                     <div class="eventImg" style="background-image: url(` +  this.data[k]["imgUrl"]+ `)"></div>
-                    <div class="eventDesp">
+                    <div class="eventDesp" style="color = black;">
                         <p class="eventTitle">`  + this.data[k]["name"] + ` </p>
                         <p class="eventOrganiserWrap">Organised by: <b class="eventOrganiser">` + this.data[k]["organiser"] + `</b></p>
                         <p class="eventVenue">Venue: <b>` +this.data[k]["venue"]  +  `</b></p>
@@ -51,7 +51,7 @@ db.ref("events").orderByChild("timeStamp").on("value", function(snapshot) {
                             var event = `
                 <div class="eventCard" style="height: 21rem;">
                     <div class="eventImg" style="background-image: url(` +  this.data[k]["imgUrl"]+ `)"></div>
-                    <div class="eventDesp">
+                    <div class="eventDesp" style="color = black;">
                         <p class="eventTitle">`  + this.data[k]["name"] + ` </p>
                         <p class="eventOrganiserWrap">Organised by: <b class="eventOrganiser">` + this.data[k]["organiser"] + `</b></p>
                         <p class="eventVenue">Venue: <b>` +this.data[k]["venue"]  +  `</b></p>

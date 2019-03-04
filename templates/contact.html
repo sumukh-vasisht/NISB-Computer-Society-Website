@@ -12,12 +12,12 @@
     {% include 'menu.html'%}
     {% include 'back_to_top.html'%}
     <p id="validMessage">
-    <form name="Contact" action="/Contact" method="POST" onclick="validate()">
+    <form name="Contact" action="/Contact" method="POST">
         <strong><font color="black">Name : </font></strong><input type = "text" name = "contactName" required><br>
         <strong><font color="black">Email : </font></strong><input type="text" name = "contactEmail" required><br>
         <strong><font color="black">Subject : </font></strong><input type="text" name = "contactSubject" required><br>
         <strong><font color="black">Message :</font></strong><input type="text" name = "contactMessage" required><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" onclick="validate()">
     </form>
     {{ message }}
 
