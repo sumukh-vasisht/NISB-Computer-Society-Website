@@ -69,7 +69,7 @@ pylint==2.2.2
 pyparsing==2.2.2
 pyrebase
 python-dateutil==2.7.3
-python-jwt==2.0.1
+python-jwt==3.3.4
 pytz==2018.5
 pywinpty==0.5.4
 pyzmq==17.1.2
